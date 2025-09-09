@@ -8,7 +8,7 @@ ARG SOPS_VERSION=3.10.2
 ADD https://github.com/mozilla/sops/releases/download/v${SOPS_VERSION}/sops-v${SOPS_VERSION}.linux.${TARGETARCH} /usr/local/bin/sops
 
 ARG KUBECTL_VERSION=1.32.8
-ADD https://storage.googleapis.com/kubernetes-release/release/v${KUBECTL_VERSION}/bin/linux/${TARGETARCH}/kubectl /usr/local/bin/kubectl
+ADD https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/${TARGETARCH}/kubectl /usr/local/bin/kubectl
 
 ARG HELM_VERSION=3.18.6
 RUN curl -sL "https://get.helm.sh/helm-v${HELM_VERSION}-linux-${TARGETARCH}.tar.gz" | tar -xvz --strip 1 "linux-${TARGETARCH}/helm" -C /usr/local/bin/
